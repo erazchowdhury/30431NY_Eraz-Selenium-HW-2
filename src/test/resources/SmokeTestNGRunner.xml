@@ -10,13 +10,13 @@
     <parameter name="driverConfigEnabled" value="true"/>
 
     <test name="smoke">
-<!--        <groups>-->
-<!--            <run>-->
-<!--                <include name=""/>-->
-<!--            </run>-->
-<!--        </groups>-->
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
         <classes>
-<!--            <class name=""/>-->
+            <class name="system.authentication.TestAuthentication"/>
         </classes>
     </test>
 

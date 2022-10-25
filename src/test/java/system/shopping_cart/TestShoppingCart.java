@@ -7,4 +7,8 @@ import org.testng.annotations.Test;
 
 
 public class TestShoppingCart extends BasePage {
+
+//    @Test (groups = {"shopping_cart", "smoke"})
+
+
 }
