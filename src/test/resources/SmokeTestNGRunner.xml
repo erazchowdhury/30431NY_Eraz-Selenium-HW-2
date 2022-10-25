@@ -7,7 +7,7 @@
     </listeners>
 
     <parameter name="browser" value="chrome"/>
-    <parameter name="driverConfigEnabled" value="true"/>
+    <parameter name="canRunDriver" value="true"/>
 
     <test name="smoke">
         <groups>
@@ -17,6 +17,7 @@
         </groups>
         <classes>
             <class name="system.authentication.TestAuthentication"/>
+            <class name="system.shopping_cart.TestShoppingCart"/>
         </classes>
     </test>
 

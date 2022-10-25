@@ -55,7 +55,7 @@ public class BasePage {
     }
 
     @Parameters({"browser", "canRunDriver"})
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void driverSetup(@Optional("chrome") String browser, @Optional("true") String canRunDriver) {
         if (Boolean.parseBoolean(canRunDriver)) {
             driverInit(browser, config.explicitTimeoutSeconds, config.fluentTimeoutSeconds, config.pollingIntervalMs);
@@ -65,7 +65,7 @@ public class BasePage {
         }
     }
 
-    @AfterMethod ()
+    @AfterMethod(alwaysRun = true)
     public void cleanUp() {
         driver.close();
         driver.quit();
