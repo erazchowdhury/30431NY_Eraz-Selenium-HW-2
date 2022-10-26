@@ -13,6 +13,9 @@ public class HomePage extends BasePage {
     @FindBy (xpath = "//ul[@id='homefeatured']//a[@title='Faded Short Sleeve T-shirts' and @class='product-name']")
     public WebElement fadedShortSleeveTShirtProductLink;
 
+    @FindBy (xpath = "//a[@title='Contact Us']")
+    public WebElement contactUsLink;
+
     public HomePage () {
         PageFactory.initElements(driver, this);
     }
@@ -27,6 +30,12 @@ public class HomePage extends BasePage {
         clickOnElement(fadedShortSleeveTShirtProductLink);
 
         return new FadedShortSleeveTShirtPage();
+    }
+
+    public ContactPage clickContactUsLink() {
+        clickOnElement(contactUsLink);
+
+        return new ContactPage();
     }
 
 
