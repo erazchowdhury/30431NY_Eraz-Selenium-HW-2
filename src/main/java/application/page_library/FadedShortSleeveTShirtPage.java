@@ -13,6 +13,9 @@ public class FadedShortSleeveTShirtPage extends BasePage {
     @FindBy (xpath = "//div[@id='layer_cart']")
     public WebElement layerCart;
 
+    @FindBy (xpath = "//a[@title='Proceed to checkout']")
+    public WebElement proceedToCheckoutButton;
+
     public FadedShortSleeveTShirtPage() {
         PageFactory.initElements(driver, this);
     }
@@ -20,5 +23,20 @@ public class FadedShortSleeveTShirtPage extends BasePage {
     public void clickAddToCartButton() {
         clickOnElement(addToCartButton);
     }
+
+    public void clickProceedToCheckoutButton() {
+        clickOnElement(proceedToCheckoutButton);
+    }
+
+    public ShoppingCartPage addItemToCartAndProceedToCheckout() {
+
+        clickAddToCartButton();
+        clickProceedToCheckoutButton();
+
+        return new ShoppingCartPage();
+
+    }
+
+
 
 }

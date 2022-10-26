@@ -20,6 +20,7 @@
             <class name="system.shopping_cart.TestShoppingCart"/>
             <class name="system.contact.TestContact"/>
             <class name="system.navigation.TestNavigation"/>
+            <class name="system.checkout.TestCheckout"/>
         </classes>
     </test>
 
