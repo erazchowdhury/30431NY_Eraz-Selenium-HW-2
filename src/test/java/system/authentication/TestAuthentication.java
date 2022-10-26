@@ -1,8 +1,6 @@
 package system.authentication;
 
-import application.page_library.ContactPage;
-import application.page_library.HomePage;
-import application.page_library.WomenPage;
+import application.page_library.*;
 import base.BasePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -10,28 +8,19 @@ import org.testng.annotations.Test;
 public class TestAuthentication extends BasePage {
 
     @Test (groups = {"authentication", "smoke"})
-    public void testNavigationToWomenPage() {
-        HomePage homePage = new HomePage();
+    public void testResetPassword() {
 
-        WomenPage womenPage = homePage.clickWomenMenuButton();
+        HomePage homePage= new HomePage();
 
-        Assert.assertTrue(isElementVisible(womenPage.womenTitleBlock));
+        AuthenticationPage authenticationPage = homePage.clickSignInButton();
 
-    }
+        ForgotYourPasswordPage forgotYourPasswordPage = authenticationPage.clickForgotPasswordLink();
 
-    @Test (groups = {"authentication", "smoke"})
-    public void testSendingMessageOnContactPage() {
-        HomePage homePage = new HomePage();
-
-        ContactPage contactPage = homePage.clickContactUsLink();
-
-        String heading = "Customer service";
         String emailAddress = config.appUser;
-        String message = "Where's my diet soda?";
+        forgotYourPasswordPage.sendForgotPasswordEmail(emailAddress);
 
-        ContactPage secondContactPage = contactPage.sendMessageOnContactPage(heading, emailAddress, message);
+        Assert.assertTrue(isElementVisible(forgotYourPasswordPage.emailSentConfirmation));
 
-        Assert.assertTrue(isElementVisible(secondContactPage.successParagraph));
     }
 
 }

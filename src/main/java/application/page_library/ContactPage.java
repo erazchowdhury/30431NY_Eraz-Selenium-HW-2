@@ -50,14 +50,12 @@ public class ContactPage extends BasePage {
 
     }
 
-    public ContactPage sendMessageOnContactPage(String heading, String emailAddress, String message) {
+    public void sendMessageOnContactPage(String heading, String emailAddress, String message) {
 
         selectSubjectHeading(heading);
         inputEmailAddress(emailAddress);
         inputMessage(message);
         clickSendButton();
-
-        return new ContactPage();
 
     }
 

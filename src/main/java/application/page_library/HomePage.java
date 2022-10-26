@@ -14,7 +14,10 @@ public class HomePage extends BasePage {
     public WebElement fadedShortSleeveTShirtProductLink;
 
     @FindBy (xpath = "//a[@title='Contact Us']")
-    public WebElement contactUsLink;
+    public WebElement contactUsButton;
+
+    @FindBy (className = "login")
+    public WebElement signInButton;
 
     public HomePage () {
         PageFactory.initElements(driver, this);
@@ -32,10 +35,16 @@ public class HomePage extends BasePage {
         return new FadedShortSleeveTShirtPage();
     }
 
-    public ContactPage clickContactUsLink() {
-        clickOnElement(contactUsLink);
+    public ContactPage clickContactUsButton() {
+        clickOnElement(contactUsButton);
 
         return new ContactPage();
+    }
+
+    public AuthenticationPage clickSignInButton() {
+        clickOnElement(signInButton);
+
+        return new AuthenticationPage();
     }
 
 

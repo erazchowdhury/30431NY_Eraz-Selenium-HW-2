@@ -18,6 +18,8 @@
         <classes>
             <class name="system.authentication.TestAuthentication"/>
             <class name="system.shopping_cart.TestShoppingCart"/>
+            <class name="system.contact.TestContact"/>
+            <class name="system.navigation.TestNavigation"/>
         </classes>
     </test>
 
